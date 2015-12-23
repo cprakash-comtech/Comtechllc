@@ -1,0 +1,10 @@
+.right {
+  position: absolute;
+  right: -13px;
+  width: 103px;
+  padding: 16px;
+  color: darkgray;
+}
+.center {
+  text-align: center;
+}

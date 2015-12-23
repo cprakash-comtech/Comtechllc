@@ -1,0 +1,31 @@
+<section>
+  <div class="container">
+    <a class="glyphicon glyphicon-circle-arrow-left" ng-click="results=[]" ng-show="results.length"></a>
+    <form>
+      <label>Enter location</label>
+      <input style="width:50%;" type="text" g-places-autocomplete options="autocompleteOptions" ng-model="location">
+      &nbsp;
+      <button class="btn btn-default" type="submit" ng-click="submit(location)">Submit</button>
+    </form>
+  </div>
+
+  <div class="container" ng-show="results.length">
+    <h4 ng-show="location">Location: {{location.formatted_address}}</h4>
+    <table class="table table-hover" >
+      <thead>
+       <tr>
+         <th class="center">Sequence</th>
+         <th class="center">Time</th>
+         <th class="center">UV Index</th>
+       </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="result in results">
+          <td class="center">{{result.SEQUENCE}}</td>
+          <td class="center">{{result.DATE_TIME}}</td>
+          <td class="center">{{result.UV_VALUE}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>

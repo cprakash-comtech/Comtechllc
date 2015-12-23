@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html ng-app="EPA_RFI">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>EPA</title>
+    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/js/bootstrap.js"/>
+    <link rel="stylesheet" href="bower_components/angular-google-places-autocomplete/src/autocomplete.css">
+
+</head>
+<body>
+    <header ng-include="'partials/header.html'"></header>
+    <div ui-view></div>
+    <footer ng-include="'partials/footer.html'"></footer>
+</body>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
+  <script src="bower_components/angular-google-places-autocomplete/src/autocomplete.js"></script>
+  <script src="js/controllers/app.js"></script>
+  <script src="js/controllers/home.js"></script>
+</html>

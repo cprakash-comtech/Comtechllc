@@ -1,0 +1,14 @@
+{
+  "name": "EPA-UVIndex",
+  "scripts": {
+    "start": "node server.js",
+    "postinstall": "gulp build"
+  },
+  "dependencies": {
+    "body-parser": "^1.14.2",
+    "bower": "^1.7.1",
+    "express": "^4.13.3",
+    "gulp": "^3.9.0",
+    "mongoose": "^4.3.3"
+  }
+}
