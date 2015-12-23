@@ -2,7 +2,7 @@
   "name": "EPA-UVIndex",
   "scripts": {
     "start": "node server.js",
-    "postinstall": "gulp build"
+    "postinstall": "bower install"
   },
   "dependencies": {
     "body-parser": "^1.14.2",
