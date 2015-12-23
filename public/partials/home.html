@@ -1,27 +1,13 @@
-<!-- <div class="container">
-      <div class="page-header">
-        <h1>Sticky footer with fixed navbar</h1>
-      </div>
-      <p class="lead">Pin a fixed-height footer to the bottom of the viewport in desktop browsers with this custom HTML and CSS. A fixed navbar has been added with <code>padding-top: 60px;</code> on the <code>body &gt; .container</code>.</p>
-      <p>Back to <a href="http://getbootstrap.com/examples/sticky-footer">the default sticky footer</a> minus the navbar.</p>
-    </div> -->
-
-
-
-
-  <div class="jumbotron">
+<div class="jumbotron">
   <div class="container" style="text-align: center;">
     <form>
-      <!-- <h3 style= "margin: 0px 15px 0 0; float: left"; >Enter location</h3> -->
-      <input style="width:400px; padding: 5px 0 7px 10px;" type="text" g-places-autocomplete options="autocompleteOptions" ng-model="location" placeholder="Enter location">
+      <input style="width:400px; padding: 5px 0 7px 10px;" type="text" g-places-autocomplete options="autocompleteOptions" ng-model="location" ng-change="submit(location)" placeholder="Enter location">
       &nbsp;
-      <button class="btn btn-success" type="submit" ng-click="submit(location)">Submit</button>
-      <button class="btn btn-default" type="submit" ng-click="results=[]" ng-show="results.length">Reset</button>
+      <!--<button class="btn btn-success" type="submit" ng-click="submit(location)">Submit</button>-->
+      <button class="btn btn-default" type="submit" ng-click="clearUI()" ng-show="results.length">Reset</button>
 
-      <!-- <a class="glyphicon glyphicon-circle-arrow-left" ng-click="results=[]" ng-show="results.length"></a> -->
     </form>
-    
-    
+
 
   <div ng-show="results.length"><br><br>
     <p ng-show="location"><strong>Location:</strong> {{location.formatted_address}}</p><br>

@@ -8,9 +8,9 @@ router.post("/",function(req,res){
 	var location = {
 	  city:city,
 	  state:state
-        }
+    };
 	var retval = {
-	  success :true,
+	  success :true
 	};
 	if(city && state){
 	  controllerObj.getUVIndexes(location,retval,function(val){
@@ -24,5 +24,5 @@ router.post("/",function(req,res){
 	  res.send(retval);
 	}
 	
-})
+});
 module.exports = router;

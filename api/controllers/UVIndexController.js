@@ -19,7 +19,7 @@ module.exports = {
 		    		//console.log('BODY: ' + chunk);
 		  	});
 			res.on('end', function() {
-			   console.log("Response String is:"+responseString);
+			   //console.log("Response String is:"+responseString);
 			   var responseObject = JSON.parse(responseString);
 			   next(responseObject);
 			    console.log('No more data in response.')
