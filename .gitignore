@@ -1,5 +1,6 @@
-/assets/
-/bower_components/
-/layouts/
+/public/bower_components/
 /node_modules/
-/templates/
+/.idea/
+
+
+*.log
