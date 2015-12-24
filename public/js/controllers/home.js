@@ -1,19 +1,24 @@
 angular.module('EPA_RFI')
   .controller('homeCtrl',["$scope","httpHelper", function($scope,httpHelper){
+	// Initialize #scope variables
 	$scope.noResponseError = false;
 	$scope.invalidInputError = false;
+	// Options to be passed to google places API	
     $scope.autocompleteOptions = {
       componentRestrictions: { country: 'us' },
       types: ['(cities)']
     };
+	// Used to remove all error notifications	
 	$scope.clearErrorBoxes= function(){
 		$scope.noResponseError = false;
 		$scope.invalidInputError = false;
-	}
+	};
+	// Used to clear the result table and errors	
 	$scope.clearUI = function () {
-		$scope.results=[];
+		$scope.results= false;
 		$scope.location = null
 	};
+	// called when submit is pressed	
     $scope.submit = function (location) {
 		var city  = ctrlUtil.getCity(location);
 		var state = ctrlUtil.getState(location);
@@ -41,17 +46,16 @@ angular.module('EPA_RFI')
 		}
 		}
  }]);
+// a object with functions to filter city and state from google places API output
 var ctrlUtil = {
  	getCity:function(location){
-		if(location && location.address_components && location.address_components.length 
-			&& location.address_components[0].long_name){
-			return location.address_components[0].long_name;
+		if(location && location.formatted_address){
+			return location.formatted_address.split(',')[0].replace(/[0-9]/g,'').trim();
 		}
 	},
 	getState:function(location){
-		if(location && location.address_components && location.address_components.length 
-			&& location.address_components.length>=3){
-			return location.address_components[2].short_name;
+		if(location && location.formatted_address){
+			return location.formatted_address.split(',')[1].replace(/[0-9]/g,'').trim();
 		}
 	}
 };

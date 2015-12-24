@@ -17,18 +17,20 @@
 
 
   <div ng-show="results.length"><br><br>
-    <p ng-show="location"><strong>Location:</strong> {{location.formatted_address}}</p><br>
-    <table class="table table-hover" >
+    <p ng-show="results"><strong>Location:</strong> {{location.formatted_address}}</p><br>
+    <table class="table table-hover table-bordered" >
+      <colgroup>
+        <col width="50%"/>
+        <col width="50%"/>
+      </colgroup>
       <thead>
        <tr>
-         <th class="center">Sequence</th>
          <th class="center">Time</th>
          <th class="center">UV Index</th>
        </tr>
       </thead>
       <tbody>
         <tr ng-repeat="result in results">
-          <td class="center">{{result.SEQUENCE}}</td>
           <td class="center">{{result.DATE_TIME}}</td>
           <td class="center">{{result.UV_VALUE}}</td>
         </tr>
