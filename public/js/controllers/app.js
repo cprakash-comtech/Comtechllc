@@ -1,11 +1,12 @@
-/**
- * Created by syedf on 12/20/2015.
- */
-var app = angular.module('EPA_RFI',['ui.router','google.places']);
+var app = angular.module('EPA_RFI',['ui.router','google.places','ngLoadingSpinner']);
 
-  app.config(['$urlRouterProvider','$stateProvider', function($urlRouterProvider,$stateProvider){
+  app.config(['$urlRouterProvider','$stateProvider','$locationProvider', function($urlRouterProvider,$stateProvider,$locationProvider){
     "use strict";
     $urlRouterProvider.otherwise('/');
+    //$locationProvider.html5Mode({
+    //  enabled: true,
+    //  requireBase: false
+    //});
     $stateProvider
       .state('home',{
         url: '/',

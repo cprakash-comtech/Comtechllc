@@ -65,3 +65,16 @@ th {
     background-color: #000!important;
     border-color: #000!important;
 }
+
+.inputWidth {
+    width:400px; 
+    padding: 5px 0 7px 10px;
+}
+
+.cstm-alert-danger{
+    border-radius: 0px!important;
+    padding: 5px !important;
+    width: 482px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}

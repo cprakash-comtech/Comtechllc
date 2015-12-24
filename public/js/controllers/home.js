@@ -1,30 +1,44 @@
-/**
- * Created by syedf on 12/20/2015.
- */
 angular.module('EPA_RFI')
-  .controller('homeCtrl',["$scope","$http", function($scope,$http){
+  .controller('homeCtrl',["$scope","httpHelper", function($scope,httpHelper){
+	$scope.noResponseError = false;
+	$scope.invalidInputError = false;
     $scope.autocompleteOptions = {
       componentRestrictions: { country: 'us' },
       types: ['(cities)']
     };
+	$scope.clearErrorBoxes= function(){
+		$scope.noResponseError = false;
+		$scope.invalidInputError = false;
+	}
 	$scope.clearUI = function () {
 		$scope.results=[];
 		$scope.location = null
 	};
     $scope.submit = function (location) {
-		  var city  = ctrlUtil.getCity(location);
-		  var state = ctrlUtil.getState(location);
-		  $http.post('/api/getUVIndex', {
-			city :city,
-			state:state
-		  }).then(
-		function(respObj){
-			   var retval = respObj.data;
-		   if(retval && retval.success){
-				 $scope.results = retval.data;
+		var city  = ctrlUtil.getCity(location);
+		var state = ctrlUtil.getState(location);
+		// http Service
+		if(city && state){
+			httpHelper.queryByLocation(city , state).then(
+				function(respObj){
+					$scope.noResponseError = false;
+					var retval = respObj.data;
+					if(retval.data.length && retval.success){
+						$scope.results = retval.data;
+					}
+					else if(!retval.data.length){
+						// Tell user there was no response
+						$scope.noResponseError = true;
+						$scope.results = false;
+					}
+				}
+			);
 		}
+		else{
+			// Invalid Input
+			$scope.results = false;
+			$scope.invalidInputError = true;
 		}
-		);
 		}
  }]);
 var ctrlUtil = {

@@ -1,4 +1,7 @@
-/bower_components/
+/public/bower_components/
 /layouts/
 /node_modules/
-/templates/
+/.idea/
+
+
+*.log
