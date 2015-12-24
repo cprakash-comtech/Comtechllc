@@ -41,5 +41,5 @@ gulp.task('dev:server',function(){
 	});
 });
 gulp.task('dev',['watch:js','dev:server']);
-gulp.task('build',['js']);
+gulp.task('build',['js',"bower"]);
 
