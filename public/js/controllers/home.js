@@ -5,23 +5,27 @@ angular.module('EPA_RFI')
   .controller('homeCtrl',["$scope","$http", function($scope,$http){
     $scope.autocompleteOptions = {
       componentRestrictions: { country: 'us' },
-      types: ['geocode']
+      types: ['(cities)']
     };
+	$scope.clearUI = function () {
+		$scope.results=[];
+		$scope.location = null
+	};
     $scope.submit = function (location) {
-      var city  = ctrlUtil.getCity(location);
-      var state = ctrlUtil.getState(location);
-      $http.post('/api/getUVIndex', {
-		city :city,
-		state:state
-      }).then(
-	function(respObj){
-           var retval = respObj.data;
-	   if(retval && retval.success){
-             $scope.results = retval.data;
-	   }
-	}
-      );
-    }
+		  var city  = ctrlUtil.getCity(location);
+		  var state = ctrlUtil.getState(location);
+		  $http.post('/api/getUVIndex', {
+			city :city,
+			state:state
+		  }).then(
+		function(respObj){
+			   var retval = respObj.data;
+		   if(retval && retval.success){
+				 $scope.results = retval.data;
+		}
+		}
+		);
+		}
  }]);
 var ctrlUtil = {
  	getCity:function(location){
@@ -36,5 +40,5 @@ var ctrlUtil = {
 			return location.address_components[2].short_name;
 		}
 	}
-}
+};
 

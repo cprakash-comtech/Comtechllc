@@ -1,1 +1,6 @@
 /bower_components/
+/.idea/
+
+
+*.xml
+*.log

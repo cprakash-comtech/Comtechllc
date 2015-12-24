@@ -15,16 +15,31 @@ module.exports = {
 			res.setEncoding('utf8');
 			var responseString = '';
 		  	res.on('data', function (chunk) {
-				responseString+=chunk;
-		    		//console.log('BODY: ' + chunk);
+				if(chunk){
+				     responseString+=chunk;
+				}
+				
 		  	});
 			res.on('end', function() {
-			   console.log("Response String is:"+responseString);
-			   var responseObject = JSON.parse(responseString);
+			   console.log("Response end Received");
+			   var responseObject = null;
+			   try{
+				responseObject = JSON.parse(responseString)
+			   }catch(e){
+                              	console.log("Error while parsing response:",responseString);
+			      	console.log("Error is",e);
+				retval.success=false;
+				retval.errMsg  = "Invalid Api response";
+                           }
 			   next(responseObject);
-			    console.log('No more data in response.')
+			   console.log('No more data in response.')
 			});
 			 
+		  },function(res){
+			console.log("In error callback");
+			retval.success=false;
+			retval.errMsg  = "Invalid Api response";
+			next(responseObject);
 		  }
 	        );
 		return;
