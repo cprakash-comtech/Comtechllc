@@ -8,7 +8,7 @@ router.post("/",function(req,res){
 	var location = {
 	  city:city,
 	  state:state
-    };
+    	};
 	var retval = {
 	  success :true
 	};
