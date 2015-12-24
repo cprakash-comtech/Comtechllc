@@ -15,7 +15,7 @@ gulp.task("js",function(){
 	.pipe(sourcemaps.write())
         .pipe(gulp.dest('public/assets'))
 });
-var jsFiles = ['public/bower_components/*'];
+/*var jsFiles = ['public/bower_components/*'];
 gulp.task("js-lib",function(){
 	gulp.src(mainBowerFiles().concat(jsFiles))
 	//.pipe(sourcemaps.init())
@@ -25,7 +25,7 @@ gulp.task("js-lib",function(){
            .pipe(uglify())
 	//.pipe(sourcemaps.write())
         .pipe(gulp.dest('public/assets'))
-});
+});*/
 gulp.task('watch:js', ['js'], function () {
   gulp.watch("public/js/**/*.js", ['js'])
 });
@@ -41,5 +41,5 @@ gulp.task('dev:server',function(){
 	});
 });
 gulp.task('dev',['watch:js','dev:server']);
-gulp.task('build',['js','js-lib']);
+gulp.task('build',['js']);
 
