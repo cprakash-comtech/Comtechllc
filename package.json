@@ -19,6 +19,5 @@
     "gulp-sourcemaps": "^1.6.0",
     "gulp-uglify": "^1.5.1",
     "mongoose": "^4.3.3"
-  },
-  "engine": "node >= 4.2.3"
+  }
 }
