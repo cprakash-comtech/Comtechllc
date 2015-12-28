@@ -6,5 +6,6 @@ console.log("In Server.js");
 app.listen(process.env.PORT || 3000,function(){
 	console.log("Server listening on 3000");
 });
+//require static paths
 app.use('/',require('./api/controllers/static'));
 app.use('/api/getUVIndex', require('./api/UVIndex'));
