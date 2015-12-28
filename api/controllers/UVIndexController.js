@@ -9,7 +9,7 @@ var utilObj = {
 }; 
 module.exports = {
 	getUVIndexes:function(location,retval,next){
-		console.log("In get UVIndexes");
+		console.log("In get UVIndexes test travis");
 		var clientReq = http.get(utilObj.getUrl(location),function(res){
 			console.log("In response from EPA:1");
 			res.setEncoding('utf8');
