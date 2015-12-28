@@ -16,17 +16,15 @@ angular.module('EPA_RFI')
 		// Used to clear the result table and errors
 		$scope.clearUI = function () {
 			$scope.results = false;
-			$scope.location = null
+			$scope.location = null;
 		};
 		// called when submit is pressed
 		$scope.submit = function (location) {
-			console.log(location);
 			var city  = ctrlUtil.getCity(location);
 			var state = ctrlUtil.getState(location);
-			var place_id = location.place_id;
 			// http Service
 			if(city && state){
-				httpHelper.queryByLocation(city , state, place_id).then(
+				httpHelper.queryByLocation(city , state).then(
 					function(respObj){
 						$scope.noResponseError = false;
 						var retval = respObj.data;

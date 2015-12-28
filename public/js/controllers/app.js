@@ -1,6 +1,7 @@
 var app = angular.module('EPA_RFI',['ui.router','google.places','ngLoadingSpinner']);
-app.config(['$urlRouterProvider','$stateProvider', function($urlRouterProvider,$stateProvider){
-  "use strict";
+app.config(['$urlRouterProvider',
+            '$stateProvider', function($urlRouterProvider,$stateProvider){
+  'use strict';
   $urlRouterProvider.otherwise('/');
   $stateProvider
     .state('home',{
