@@ -32,7 +32,7 @@
       <tbody>
         <tr ng-repeat="result in results">
           <td class="center">{{result.DATE_TIME}}</td>
-          <td class="center">{{result.UV_VALUE}}</td>
+          <td class="center" ng-class="result.EXPOSURE" title="Exposure level: {{result.EXPOSURE}}">{{result.UV_VALUE}}</td>
         </tr>
       </tbody>
     </table>

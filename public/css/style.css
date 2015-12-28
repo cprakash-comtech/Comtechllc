@@ -78,3 +78,19 @@ th {
     margin-left: auto !important;
     margin-right: auto !important;
 }
+
+.Low {
+    background: #90ee90;
+}
+.Moderate {
+    background: #feff7b;
+}
+.High {
+    background: #ffd865;
+}
+.VeryHigh {
+    background: #ff4f56;
+}
+.Extreme {
+    background: dodgerblue;
+}
