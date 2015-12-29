@@ -20,6 +20,7 @@ angular.module('EPA_RFI')
 		};
 		// called when submit is pressed
 		$scope.submit = function (location) {
+			console.log("In Submit:",location);
 			var city  = ctrlUtil.getCity(location);
 			var state = ctrlUtil.getState(location);
 			// http Service
@@ -28,10 +29,14 @@ angular.module('EPA_RFI')
 					function(respObj){
 						$scope.noResponseError = false;
 						var retval = respObj.data;
-						if(retval.data.length && retval.success){
+						if(retval && retval.data 
+							&& retval.data.length 
+							&& retval.success){
 							$scope.results = retval.data;
 						}
-						else if(!retval.data.length){
+						else if(!retval 
+							||!retval.data 
+							|| !retval.data.length){
 							// Tell user there was no response
 							$scope.noResponseError = true;
 							$scope.results = false;
