@@ -1,4 +1,4 @@
-var app = angular.module('EPA_RFI',['ui.router','google.places','ngLoadingSpinner']);
+var app = angular.module('EPA_RFI',['ui.router','google.places','ngLoadingSpinner','chart.js']);
 app.config(['$urlRouterProvider',
             '$stateProvider', function($urlRouterProvider,$stateProvider){
   'use strict';
@@ -7,10 +7,15 @@ app.config(['$urlRouterProvider',
     .state('home',{
       url : '/',
       templateUrl : 'partials/home.html',
-      controller : "homeCtrl"
+      controller : 'homeCtrl'
     })
     .state('about',{
       url : '/about',
       templateUrl : 'partials/about.html'
+    })
+    .state('analytics',{
+        url: '/analytics',
+        templateUrl: 'partials/analytics.html',
+        controller: 'analyticsCtrl'
     });
 }]);

@@ -81,16 +81,21 @@ th {
 
 .Low {
     background: #90ee90;
+    border: 1px solid #fff !important;
 }
 .Moderate {
     background: #feff7b;
+    border: 1px solid #fff !important;
 }
 .High {
     background: #ffd865;
+    border: 1px solid #fff !important;
 }
 .VeryHigh {
     background: #ff4f56;
+    border: 1px solid #fff !important;
 }
 .Extreme {
     background: dodgerblue;
+    border: 1px solid #fff !important;
 }

@@ -26,8 +26,8 @@ module.exports = {
 			   try{
 				responseObject = JSON.parse(responseString)
 			   }catch(e){
-                              	console.log("Error while parsing response:",responseString);
-			      	console.log("Error is",e);
+                console.log("Error while parsing response:",responseString);
+			    console.log("Error is",e);
 				retval.success=false;
 				retval.errMsg  = "Invalid Api response";
                            }

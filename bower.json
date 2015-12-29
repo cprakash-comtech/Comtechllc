@@ -3,10 +3,11 @@
   "version": "0.0.0",
   "dependencies": {
     "angular": "",
-    "angular-google-places-autocomplete" : "",
+    "angular-google-places-autocomplete": "",
     "bootstrap": "",
     "angular-ui-router": "",
-	"angular-loading-spinner" :""
+    "angular-loading-spinner": "",
+    "angular-chart.js": "~0.8.8",
+    "lodash": "~3.10.1"
   }
 }
-

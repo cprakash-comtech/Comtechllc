@@ -7,7 +7,10 @@ var bower	= require("gulp-bower");
 var mainBowerFiles = require("gulp-main-bower-files");
 var filter = require("gulp-filter");
 gulp.task("js",function(){
-	gulp.src("public/js/**/*.js")
+	gulp.src([
+		"public/js/controllers/app.js",
+		"public/js/**/*.js",
+	])
 	.pipe(sourcemaps.init())
 	   .pipe(concat("app-min.js"))
            .pipe(ngAnnotate())
