@@ -1,8 +1,8 @@
 var http = require("http");
-var UVLOW_CONSTANT				=2;
-var UVMODERATE_MIN_CONSTANT		=3;
-var UVMODERATE_MAX_CONSTANT		=5;
-var UVHIGH_MIN_CONSTANT			=6;
+var UVLOW_CONSTANT		=2;
+var UVMODERATE_MIN_CONSTANT	=3;
+var UVMODERATE_MAX_CONSTANT	=5;
+var UVHIGH_MIN_CONSTANT		=6;
 var UVHIGH_MAX_CONSTANT	    	=7;
 var UVVERYHIGH_MIN_CONSTANT 	=8;
 var UVVERYHIGH_MAX_CONSTANT  	=10;
@@ -23,7 +23,7 @@ var utilObj = {
 					if(uvValue <=UVLOW_CONSTANT) {
 						result.EXPOSURE = "Low";
 					}
-					else if(uvValue >= UVMODERATE_MIN_CONSTANT && uvValue <= UVMODERATE_MIN_CONSTANT) {
+					else if(uvValue >= UVMODERATE_MIN_CONSTANT && uvValue <= UVMODERATE_MAX_CONSTANT) {
 						result.EXPOSURE = "Moderate";
 					}
 					else if(uvValue >= UVHIGH_MIN_CONSTANT && uvValue <=UVHIGH_MAX_CONSTANT) {
