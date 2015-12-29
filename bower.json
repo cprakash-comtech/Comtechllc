@@ -3,10 +3,10 @@
   "version": "0.0.0",
   "dependencies": {
     "angular": "",
-    "angular-google-places-autocomplete" : "",
+    "angular-google-places-autocomplete": "",
     "bootstrap": "",
     "angular-ui-router": "",
-    "angular-loading-spinner" :""
+    "angular-loading-spinner": "",
+    "angular-mocks": "~1.4.8"
   }
 }
-
