@@ -2,6 +2,8 @@ var request = require('superagent');
 var expect  = require('expect.js');
 var http    = require('http');
 var assert  = require('assert');
+//TODO: Pick server url automatically
+//TODO: Find better way to force fail with some message
 var host    = 'infinite-atoll-4296.herokuapp.com';
 describe('Suite one', function(){
   it('test server available',function(done){
@@ -36,7 +38,6 @@ describe('Suite one', function(){
     			respString+=chunk;
 		});
 		res.on('end', function() {
-			//console.log('No more data in response:'+respString);
 			var responseObject = null;
 			try{
 				responseObject = JSON.parse(respString);
