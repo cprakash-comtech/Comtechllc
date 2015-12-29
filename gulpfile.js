@@ -6,6 +6,7 @@ var sourcemaps  = require('gulp-sourcemaps');
 var bower	= require("gulp-bower");
 var mainBowerFiles = require("gulp-main-bower-files");
 var filter = require("gulp-filter");
+//Minify js
 gulp.task("js",function(){
 	gulp.src("public/js/**/*.js")
 	.pipe(sourcemaps.init())
@@ -15,23 +16,16 @@ gulp.task("js",function(){
 	.pipe(sourcemaps.write())
         .pipe(gulp.dest('public/assets'))
 });
-/*var jsFiles = ['public/bower_components/*'];
-gulp.task("js-lib",function(){
-	gulp.src(mainBowerFiles().concat(jsFiles))
-	//.pipe(sourcemaps.init())
-	   .pipe(filter('*.js'))
-	   .pipe(concat("app-lib.js"))
-           //.pipe(ngAnnotate())
-           .pipe(uglify())
-	//.pipe(sourcemaps.write())
-        .pipe(gulp.dest('public/assets'))
-});*/
+
+//Check if any js file has been changed
 gulp.task('watch:js', ['js'], function () {
   gulp.watch("public/js/**/*.js", ['js'])
 });
+//Install bower components
 gulp.task('bower',function(){
 	return bower();
 });
+//Automatically restart dev server if any server side code is changed
 var nodemon = require('gulp-nodemon');
 gulp.task('dev:server',function(){
 	nodemon({
