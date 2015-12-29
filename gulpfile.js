@@ -6,6 +6,8 @@ var sourcemaps  = require('gulp-sourcemaps');
 var bower	= require("gulp-bower");
 var mainBowerFiles = require("gulp-main-bower-files");
 var filter = require("gulp-filter");
+var Server = require('karma').Server;
+
 //Minify js
 gulp.task("js",function(){
 	gulp.src("public/js/**/*.js")
@@ -27,6 +29,7 @@ gulp.task('bower',function(){
 });
 //Automatically restart dev server if any server side code is changed
 var nodemon = require('gulp-nodemon');
+
 gulp.task('dev:server',function(){
 	nodemon({
 		script:'server.js',
@@ -34,6 +37,13 @@ gulp.task('dev:server',function(){
 		ignore:['public*','public/assets*']
 	});
 });
+gulp.task('test', function (done) {
+  new Server({
+    configFile: __dirname + '/test/karma-test/karma.conf.js',
+    singleRun: true
+  }, done).start();
+});
+
 gulp.task('dev',['watch:js','dev:server']);
-gulp.task('build',['js',"bower"]);
+gulp.task('build',['js',"bower","test"]);
 
