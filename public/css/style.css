@@ -94,3 +94,24 @@ th {
 .Extreme {
     background: dodgerblue;
 }
+
+.white {
+    color: white;
+}
+
+.white:hover {
+    color:#777;
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: none !important;
+}
+
+.cstm-brand{
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
+    font-size: 20px;
+    padding-top: 10px;
+}
