@@ -45,5 +45,5 @@ gulp.task('test', function (done) {
 });
 
 gulp.task('dev',['watch:js','dev:server']);
-gulp.task('build',['js',"bower","test"]);
+gulp.task('build',['js',"bower"]);
 
